@@ -16,6 +16,7 @@ const Modal = ({ firstName, lastName, userId, token, setUser }) => {
       if (inputVal <= 0) {
         toast.error("Amount has to be positive!");
         navigate("/dashboard");
+        return;
       }
       const resp = await axios.post(
         "http://127.0.0.1:3000/api/v1/account/transfer",
