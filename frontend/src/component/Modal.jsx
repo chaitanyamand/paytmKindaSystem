@@ -13,8 +13,8 @@ const Modal = ({ firstName, lastName, userId, token, setUser }) => {
   const handleClick = async () => {
     try {
       const inputVal = Number(input);
-      if (inputVal < 0) {
-        toast.error("Cannot Transfer Negative Amount!");
+      if (inputVal <= 0) {
+        toast.error("Amount has to be positive!");
         navigate("/dashboard");
       }
       const resp = await axios.post(
